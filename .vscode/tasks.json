@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "shell": {
+          "executable": "bash",
+          "args": ["-ci"]
+        }
+      },
+      "tasks": 
+      [
+         {
+          "label": "CreateBuildFolder",
+          "type": "shell",
+          "command": "mkdir -p build",
+          "options": {
+              "cwd": "${workspaceFolder}"
+          }
+        },
+
+        {
+          "label": "BuildDebug",
+          "type": "shell",
+          "command": "cmake -DCMAKE_BUILD_TYPE=Debug .. && make VERBOSE=1 -j6",
+          "options": {
+              "cwd": "${workspaceFolder}/build"
+          },
+          "group": {
+              "kind": "build",
+              "isDefault": true
+          },
+          "dependsOn": [
+              "CreateBuildFolder"
+          ],
+          "problemMatcher": []
+      },
+
+      ],
+}

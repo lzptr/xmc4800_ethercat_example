@@ -1,0 +1,9 @@
+[submodule "libs/platforms"]
+	path = libs/platforms
+	url = ../platforms.git
+[submodule "libs/mtb-xmclib-cat3"]
+	path = libs/mtb-xmclib-cat3
+	url = ../mtb-xmclib-cat3.git
+[submodule "libs/cmsis-core"]
+	path = libs/cmsis-core
+	url = ../cmsis-core.git

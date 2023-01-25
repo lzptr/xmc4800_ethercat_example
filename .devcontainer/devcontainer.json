@@ -1,0 +1,46 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.112.0/containers/cpp
+{
+	"name": "XMC_Docker",
+	"dockerFile": "../Dockerfile",
+	"runArgs": [
+		"--privileged",
+		"--network=host",
+		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+	],
+	"mounts": [
+		"source=${localEnv:HOME}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind,consistency=cached",
+		"type=bind,source=/dev/bus/usb,target=/dev/bus/usb"
+	],
+	"containerEnv": {
+		"DISPLAY": ":0", // Add x11 forwarding to host
+		"GITHUB_USER": "${localEnv:GITHUB_USER}" // Use the host git username when committing
+	},
+	"settings": {
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "bash"
+			},
+		},
+		"terminal.integrated.defaultProfile.linux": "bash"
+	},
+	"extensions": [
+		"ms-vscode.cpptools",
+		"eamodio.gitlens",
+		"marus25.cortex-debug",
+		"twxs.cmake",
+		"ms-vscode.hexeditor",
+		"llvm-vs-code-extensions.vscode-clangd",
+		"foxundermoon.shell-format",
+		"formulahendry.code-runner",
+		"timonwong.shellcheck",
+		"cheshirekow.cmake-format",
+	],
+	"forwardPorts": [
+		5000,
+		3333,
+		2331,
+		2332,
+		2333,
+	],
+}
