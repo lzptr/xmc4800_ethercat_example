@@ -11,7 +11,6 @@ add_library(${PROJECT_NAME} STATIC
 
 target_include_directories(${PROJECT_NAME} PUBLIC 
   ${CMAKE_CURRENT_LIST_DIR}/../../mtb-xmclib-cat3/XMCLib/inc
-  ${CMAKE_CURRENT_LIST_DIR}/../../mtb-xmclib-cat3/CMSIS/Core/Include
   ${CMAKE_CURRENT_LIST_DIR}/../../mtb-xmclib-cat3/CMSIS/Infineon/COMPONENT_XMC4800/Include
 )
 

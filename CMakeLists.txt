@@ -25,6 +25,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 ##### Project Setup #####
 
+set(XMC4800_LINKER_FILE ${CMAKE_CURRENT_LIST_DIR}/libs/mtb-xmclib-cat3/CMSIS/Infineon/COMPONENT_XMC4800/Source/TOOLCHAIN_GCC_ARM/XMC4800x2048.ld)
+        
 # Add additional modules
 include(${CMAKE_CURRENT_LIST_DIR}/libs/platforms/toolchain/firmware.cmake)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/libs/platforms/bareMetal_xmc4800)
