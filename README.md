@@ -34,10 +34,13 @@ To get the cross compiler and the debugging tools you can execute the bootstrap 
 
 The script downloads the gcc-arm-none-eabi compiler and Segger JLink
 and installs them in /opt/toolchain.
-
 The bootstrap script also copies the udev rules for JLink.
 
 
+To use the docker environment, just install the remote development extension for vscode and select the option to reopen the folder inside the container.
+The extension takes care of building the docker image and install all necessary components for building the software.
+
+---
 ### 2.1) Build Using the Command Line
 
 	$ mkdir build
@@ -127,7 +130,6 @@ If you use another chip, you need to add your own SVD file.
 Here is a blog post where you can find other SVD files:
 	https://community.silabs.com/s/article/svd-file-for-efm32-device?language=en_US
 
-With all of this set in place, you can use the visual debugger of vs code to debug you 
-microcontroller!
-Build the firmware and hit "F5" to start the debugging sessions with the board attached and set some breakpoints.
+With all of this set in place, you can use the visual debugger of vs code to debug your 
+microcontroller.
 

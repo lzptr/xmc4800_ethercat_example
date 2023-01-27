@@ -1,13 +1,28 @@
 # Create the executable target
+file(GLOB_RECURSE PROJ_SOURCES "${CMAKE_CURRENT_LIST_DIR}/*.c")
+
+add_custom_command (
+  OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/sii_eeprom.o
+  DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/sii_eeprom.bin
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+  COMMAND arm-none-eabi-objcopy -I binary -O elf32-littlearm -B arm sii_eeprom.bin ${CMAKE_CURRENT_BINARY_DIR}/sii_eeprom.o
+  )
+
 add_executable(${CMAKE_PROJECT_NAME}
-                    main.c
+                    ${PROJ_SOURCES}
+                    sii_eeprom.o
 )
+
+# Add project ethercat options to soem lib...
+target_include_directories(soes PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+
 
 # Link the libraries
 target_link_libraries (${CMAKE_PROJECT_NAME} 
                         PUBLIC 
                             gcc
                             c 
+                            soes
                             xmc4800_lib
 )
 
@@ -21,8 +36,7 @@ target_compile_options(${CMAKE_PROJECT_NAME}
 # Link with the nano C std library
 target_link_options(${CMAKE_PROJECT_NAME} 
                             PUBLIC
-                            --specs=nano.specs
-                            -Wl,-Map=${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${CMAKE_PROJECT_NAME}.map
+                            --specs=nosys.specs
 )
 
 # Add the binary for flashing

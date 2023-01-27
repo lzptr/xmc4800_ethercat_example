@@ -7,3 +7,6 @@
 [submodule "libs/cmsis-core"]
 	path = libs/cmsis-core
 	url = ../cmsis-core.git
+[submodule "libs/SOES"]
+	path = libs/SOES
+	url = ../SOES.git

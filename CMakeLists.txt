@@ -32,6 +32,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/libs/platforms/toolchain/firmware.cmake)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/libs/platforms/bareMetal_xmc4800)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/libs/cmakes/cmsis_core)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/libs/cmakes/xmc4800_lib)
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/libs/cmakes/soes)
 
 
 # Add the subdirs with the actual code
