@@ -12,6 +12,7 @@ Designed and tested on Windows with WSL2 & linux.
 	* [2.2 Build Using VS Code](#22-build-using-vs-code)
 	* [2.3 Debugging in WSL2 with USB Passthrough](#23-debugging-in-wsl2-with-usb-passthrough)
 		* [2.3.1 Setup USB Passthrough](#231-setup-usb-passthrough)
+* [3. Test the EtherCAT Connection](#3-test-the-ethercat-connection)
 
 ## 1) Dependencies
 
@@ -130,6 +131,9 @@ If you use another chip, you need to add your own SVD file.
 Here is a blog post where you can find other SVD files:
 	https://community.silabs.com/s/article/svd-file-for-efm32-device?language=en_US
 
-With all of this set in place, you can use the visual debugger of vs code to debug your 
-microcontroller.
+
+## 3) Test the EtherCAT Connection
+
+To test your slave, you need to use a EtherCAT Master. You can use TwinCAT which is free of charge,
+but works only under Windows. Or you use SOEM, but then you need to code the example yourself.
 

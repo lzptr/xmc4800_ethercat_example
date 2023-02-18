@@ -9,7 +9,7 @@
 		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
 	],
 	"mounts": [
-		"source=${localEnv:HOME}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
 		"type=bind,source=/dev/bus/usb,target=/dev/bus/usb"
 	],
 	"containerEnv": {
@@ -43,4 +43,5 @@
 		2332,
 		2333,
 	],
+	"remoteUser": "vscode"
 }

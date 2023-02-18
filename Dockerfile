@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
     gdb \
     usbutils
 
-RUN useradd -ms /bin/bash jenkins
+RUN useradd -ms /bin/bash vscode
 
 # Switch user back to root
 USER root
